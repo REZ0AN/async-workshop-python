@@ -26,13 +26,13 @@ This project demonstrates different approaches to fetch language statistics from
 ## Performance Comparison
 
 - Synchronous Implementation
- ![Screenshot 1: Synchronous Implementation Runtime](./images/sync.png)
+ ![Screenshot 1: Synchronous Implementation Runtime](../images/sync.png)
 
 - Basic Async Implementation
- ![Screenshot 2: Basic Async Implementation Runtime](./images/async.png)
+ ![Screenshot 2: Basic Async Implementation Runtime](../images/async.png)
 
 - Optimized Async Implementation
- ![Screenshot 3: Optimized Async Implementation Runtime](./images/async[updated].png)
+ ![Screenshot 3: Optimized Async Implementation Runtime](../images/async[updated].png)
 
 ## Data Integrity Verification
 
@@ -42,7 +42,7 @@ To ensure the consistency of data across all implementations, we use a file inte
 - Provides confidence in data consistency
 
 ### Integrity Check Output
-![Screenshot 4: Files Integrity Check](./images/files_intigrity_check.png)
+![Screenshot 4: Files Integrity Check](../images/files_intigrity_check.png)
 
 ## Environment Setup
 
