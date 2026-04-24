@@ -10,7 +10,7 @@ def trampoline(name: str) -> None:
 
 def hog(name: str) -> None:
     print(f"\n*** {name} HOG STARTS — loop will freeze! ***")
-    total = sum(i * j for i in range(10000) for j in range(10000))
+    total = sum(i * j for i in range(100000) for j in range(10000))
     print(f"*** {name} HOG DONE — loop resumes ***\n")
 
 # Normal trampolines
