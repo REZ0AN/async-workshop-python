@@ -500,9 +500,9 @@ Three generations of the crawler, each improving on the last:
 
 | Version | Strategy | Speed |
 |---|---|---|
-| `crawl_base` | Recursive `await` — fully sequential | ~94s |
-| `crawl_intermediate` | Adds `todo` set tracking, still sequential | ~94s |
-| `crawl_beast` | `create_task` per URL — fully concurrent | ~13s |
+| `crawl_base` | Recursive `await` — fully sequential | ~28s |
+| `crawl_intermediate` | Adds `todo` set tracking, still sequential | ~28s |
+| `crawl_beast` | `create_task` per URL — fully concurrent | ~5s |
 
 **`asyncio.create_task()` explained:**
 
@@ -755,7 +755,7 @@ This entire series operates on **concurrency, not parallelism**:
 | **Mechanism** | Cooperative `await` yields | OS-level scheduling |
 | **asyncio** | ✅ Yes | ❌ No |
 
-The web crawler benchmark (Chapter 8) achieves **7x speedup** over the sequential version while remaining entirely single-threaded. This is possible because most of the time is spent waiting for network I/O — and `asyncio` fills that wait time with other useful work.
+The web crawler benchmark (Chapter 8) achieves **~17x speedup** over the sequential version while remaining entirely single-threaded. This is possible because most of the time is spent waiting for network I/O — and `asyncio` fills that wait time with other useful work.
 
 ---
 
@@ -796,7 +796,7 @@ Crawling the full local graph (35 nodes, 300–1200ms delay per node):
 | `crawl_intermediate` | Sequential + todo tracking | ~28 seconds |
 | `crawl_beast` | `create_task` per URL (concurrent) | ~5 seconds |
 
-**Speedup: ~7.2x — on a single thread, zero parallelism.**
+**Speedup: ~17x, on a single thread, zero parallelism.**
 
 ---
 
